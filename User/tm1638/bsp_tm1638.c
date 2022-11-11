@@ -25,13 +25,11 @@ void delay_ms(uint16_t delay_ms)
   }
 }
 
-
-
 /**
-* @brief  设置为输出模式
-* @param  void
-* @retval void
-*/
+ * @brief  设置为输出模式
+ * @param  void
+ * @retval void
+ */
 void Bsp_Key_Write_Mode(void)
 {
   GPIO_InitTypeDef GPIO_InitTypeStruct;
@@ -42,10 +40,10 @@ void Bsp_Key_Write_Mode(void)
 }
 
 /**
-* @brief  设置为输出模式
-* @param  void
-* @retval void
-*/
+ * @brief  设置为输出模式
+ * @param  void
+ * @retval void
+ */
 void Bsp_Key_Read_Mode(void)
 {
   GPIO_InitTypeDef GPIO_InitTypeStruct;
@@ -55,10 +53,10 @@ void Bsp_Key_Read_Mode(void)
 }
 
 /**
-* @brief 写数据
-* @param  data：写的数据
-* @retval 无
-*/
+ * @brief 写数据
+ * @param  data：写的数据
+ * @retval 无
+ */
 void TM1638_Write(uint8_t data)
 {
   // 设置写模式
@@ -85,10 +83,10 @@ void TM1638_Write(uint8_t data)
 }
 
 /**
-* @brief 写命令
-* @param  cmd：命令
-* @retval 无
-*/
+ * @brief 写命令
+ * @param  cmd：命令
+ * @retval 无
+ */
 void Write_COM(uint8_t cmd)
 {
   // 设置STB为低电平
@@ -99,11 +97,11 @@ void Write_COM(uint8_t cmd)
 }
 
 /**
-* @brief 在指定地址写数据
-* @param  add: 地址
-* @param  data: 数据
-* @retval 无
-*/
+ * @brief 在指定地址写数据
+ * @param  add: 地址
+ * @param  data: 数据
+ * @retval 无
+ */
 void Write_DATA(uint8_t add, uint8_t data)
 {
   Write_COM(0x44);
@@ -114,9 +112,10 @@ void Write_DATA(uint8_t add, uint8_t data)
   // 设置STB为高电平
   GPIO_SetBits(BSP_TM1638_PORT, BSP_TM1638_STB);
 }
+
 /**
-* @brief  初始化函数
-*/
+ * @brief  初始化函数
+ */
 void Bsp_Key_Init(void)
 {
   RCC_APB2PeriphClockCmd(BSP_TM1638_RCC_CLK, ENABLE);
