@@ -149,7 +149,7 @@ uint8_t Read_Key(void)
 
   // 设置STB为低电平
   GPIO_ResetBits(BSP_TM1638_PORT, BSP_TM1638_STB);
-  TM1638_Write(0x42); //读键扫数据 命令
+  TM1638_Write(0x42); //读键扫数据（自动地址增加模式） 命令
   for (i = 0; i < 4; i++)
     c[i] = TM1638_Read();
   // 设置STB为高电平
