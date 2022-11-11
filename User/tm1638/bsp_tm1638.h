@@ -12,5 +12,6 @@
 void Bsp_Key_Init(void);
 void Write_DATA(uint8_t add, uint8_t data);
 void Write_COM(uint8_t cmd);
+uint8_t Read_Key(void);
 
 #endif /*__BSP_TM1638_H*/

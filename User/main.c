@@ -14,6 +14,15 @@ int main(void)
     for (i = 0; i < 8; i++)
         Write_DATA(i << 1, tab[0]); //初始化寄存器
 
-    Write_DATA(2, tab[9]); //第二个数码管显示9
-    return 0;
+    // Write_DATA(2, tab[9]); //第二个数码管显示9
+
+    while (1)
+    {
+        i = Read_Key(); //读按键值
+        if (i < 8)
+        {
+            Write_DATA(i * 2, tab[i]);
+        }
+    }
+    // return 0;
 }
